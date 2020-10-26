@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Contacts </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-virtual-scroll [items]="contacts" [headerFn]="myHeaderFn">
+    <ion-item-divider *virtualHeader="let header">
+      {{ header }}
+    </ion-item-divider>
+    <ion-item *virtualItem="let item">
+      <ion-label>
+        <h2>{{item.name.first}} {{item.name.last}}</h2>
+        <h4>{{item.email}}</h4>
+      </ion-label>
+    </ion-item>
+  </ion-virtual-scroll>
+</ion-content>
